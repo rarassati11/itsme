@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Penjualan</title>
+    <link rel="stylesheet" href="stylejual.css">
+</head>
+<body>
+    <h2>Laporan Penjualan</h2>
+
+    <!-- Tabel Data -->
+    <table id="salesTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Januari</th>
+                <th>Februari</th>
+                <th>Maret</th>
+                <th>April</th>
+                <th>Mei</th>
+                <th>Juni</th>
+                <th>Juli</th>
+                <th>Agustus</th>
+                <th>September</th>
+                <th>Oktober</th>
+                <th>November</th>
+                <th>Desember</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2022</td>
+                <td>4.017</td><td>6.135</td><td>7.091</td><td>5.841</td><td>5.036</td><td>4.547</td>
+                <td>3.467</td><td>3.970</td><td>6.313</td><td>3.595</td><td>9.207</td><td>5.945</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>2.416</td><td>4.136</td><td>7.935</td><td>8.004</td><td>9.505</td><td>5.026</td>
+                <td>6.108</td><td>6.343</td><td>9.404</td><td>9.280</td><td>9.287</td><td>8.689</td>
+            </tr>
+        </tbody>
+    </table>
+
+<!-- Form untuk input data baru -->
+<form id="inputForm">
+    <h3>Tambah Data Baru</h3>
+    <label for="tahun">Tahun: </label>
+    <input type="number" id="tahun" placeholder="Masukkan tahun" required><br><br>
+    <label>Bulan:</label><br>
+    <div id="bulanInputs">
+        <input type="number" placeholder="Januari" id="januari" required>
+        <input type="number" placeholder="Februari" id="februari" required>
+        <input type="number" placeholder="Maret" id="maret" required>
+        <input type="number" placeholder="April" id="april" required>
+        <input type="number" placeholder="Mei" id="mei" required>
+        <input type="number" placeholder="Juni" id="juni" required>
+        <input type="number" placeholder="Juli" id="juli" required>
+        <input type="number" placeholder="Agustus" id="agustus" required>
+        <input type="number" placeholder="September" id="september" required>
+        <input type="number" placeholder="Oktober" id="oktober" required>
+        <input type="number" placeholder="November" id="november" required>
+        <input type="number" placeholder="Desember" id="desember" required>
+    </div><br>
+    <button type="button" onclick="addData()">Tambah Data</button>
+</form>
+
+<!-- Form untuk memilih tahun yang ingin dihapus -->
+<label for="tahunHapus">Pilih Tahun untuk Dihapus:</label>
+<select id="tahunHapus">
+    <option value="">Pilih Tahun</option>
+</select>
+<button type="button" onclick="hapusData()">Hapus Data Tahun Terpilih</button>
+
+    <!-- Grafik Chart -->
+    <canvas id="penjualanChart"></canvas>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scriptjual.js"></script>
+</body>
+</html>
